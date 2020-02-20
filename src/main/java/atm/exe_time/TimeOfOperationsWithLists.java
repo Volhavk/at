@@ -4,25 +4,22 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class TimeOfOperationsWithLists {
-    static ArrayList<Integer> array = new ArrayList<Integer>();
-    static LinkedList<Integer> linkedList = new LinkedList<Integer>();
-    static HashSet<Integer> hashSet = new HashSet<Integer>();
-    static TreeSet<Integer> treeSet = new TreeSet<Integer>();
-    static HashMap<Integer, Integer> hashMap = new HashMap<Integer, Integer>();
-    static TreeMap<Integer, Integer> treeMap = new TreeMap<Integer, Integer>();
+
 
     public static long calculateExeTimeForArrayListAdding() {
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
         long arrayStartTime = System.nanoTime();
         for (int i = 0; i < 10000; i++) {
-            array.add(i);
+            arrayList.add(i);
         }
         long arrayEndTime = System.nanoTime();
         long arrayExeTime = TimeUnit.MICROSECONDS.convert((arrayEndTime - arrayStartTime), TimeUnit.NANOSECONDS);
-        System.out.println("Time for adding elements into array: " + arrayExeTime);
+        System.out.println("Time for adding elements into arrayList: " + arrayExeTime);
         return arrayExeTime;
     }
 
     static long calculateExeTimeForLinkedListAdding() {
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
         long linkedStartTime = System.nanoTime();
         for (int i = 0; i < 100000; i++) {
             linkedList.add(i);
@@ -34,6 +31,7 @@ public class TimeOfOperationsWithLists {
     }
 
     static long calculateExeTimeForHashSetAdding() {
+        HashSet<Integer> hashSet = new HashSet<Integer>();
         long hashSetStartTime = System.nanoTime();
         for (int i = 0; i < 100000; i++) {
             hashSet.add(i);
@@ -45,6 +43,7 @@ public class TimeOfOperationsWithLists {
     }
 
     static long calculateExeTimeForTreeSetAdding() {
+        TreeSet<Integer> treeSet = new TreeSet<Integer>();
         long treeSetStartTime = System.nanoTime();
         for (int i = 0; i < 100000; i++) {
             treeSet.add(i);
@@ -56,6 +55,7 @@ public class TimeOfOperationsWithLists {
     }
 
     static long calculateExeTimeForHashMapAdding() {
+        HashMap<Integer, Integer> hashMap = new HashMap<Integer, Integer>();
         long hashMapStartTime = System.nanoTime();
         for (int i = 0; i < 100000; i++) {
             hashMap.put(i, i);
@@ -67,6 +67,7 @@ public class TimeOfOperationsWithLists {
     }
 
     static long calculateExeTimeForTreeMapAdding() {
+        TreeMap<Integer, Integer> treeMap = new TreeMap<Integer, Integer>();
         long treeMapStartTime = System.nanoTime();
         for (int i = 0; i < 100000; i++) {
             treeMap.put(i, i);
@@ -77,17 +78,24 @@ public class TimeOfOperationsWithLists {
         return treeMapExeTime;
     }
 
-
     static long timeOfGettingNumberFromArray() {
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        for (int i = 0; i < 10000; i++) {
+            arrayList.add(i);
+        }
         long arrayStartTime = System.nanoTime();
-        array.get(9000);
+        arrayList.get(9000);
         long arrayEndTime = System.nanoTime();
         long arrayGetTime = TimeUnit.MICROSECONDS.convert((arrayEndTime - arrayStartTime), TimeUnit.NANOSECONDS);
-        System.out.println("Time for getting element from array: " + arrayGetTime);
+        System.out.println("Time for getting element from arrayList: " + arrayGetTime);
         return arrayGetTime;
     }
 
     static long timeOfGettingNumberLinkedList() {
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+        for (int i = 0; i < 100000; i++) {
+            linkedList.add(i);
+        }
         long linkedStartTime = System.nanoTime();
         linkedList.get(9000);
         long linkedEndTime = System.nanoTime();
@@ -95,17 +103,12 @@ public class TimeOfOperationsWithLists {
         System.out.println("Time for getting element from LinkedList: " + linkedGetTime);
         return linkedGetTime;
     }
-    //
-////    static void getNumberFromHashSet() {
-////        Iterator iterator = hashSet.iterator();
-////         iterator.next();
-////    }
-//
-//    static long getNumberFromTreeSet() {
-//        return
-//    }
 
     static long timeOfGettingNumberFromHashMap() {
+        HashMap<Integer, Integer> hashMap = new HashMap<Integer, Integer>();
+        for (int i = 0; i < 100000; i++) {
+            hashMap.put(i, i);
+        }
         long hashMapStartTime = System.nanoTime();
         hashMap.get(9000);
         long hashMapEndTime = System.nanoTime();
@@ -115,6 +118,10 @@ public class TimeOfOperationsWithLists {
     }
 
     static long timeOfGettingNumberFromTreeMap() {
+        TreeMap<Integer, Integer> treeMap = new TreeMap<Integer, Integer>();
+        for (int i = 0; i < 100000; i++) {
+            treeMap.put(i, i);
+        }
         long treeMapStartTime = System.nanoTime();
         treeMap.get(9000);
         long treeMapEndTime = System.nanoTime();
@@ -125,15 +132,23 @@ public class TimeOfOperationsWithLists {
 
 
     static long timeOfRemoveNumberFromArray() {
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        for (int i = 0; i < 10000; i++) {
+            arrayList.add(i);
+        }
         long arrayStartTime = System.nanoTime();
-        array.remove(9900);
+        arrayList.remove(9900);
         long arrayEndTime = System.nanoTime();
         long arrayGetTime = TimeUnit.MICROSECONDS.convert((arrayEndTime - arrayStartTime), TimeUnit.NANOSECONDS);
-        System.out.println("Time for remove element from array: " + arrayGetTime);
+        System.out.println("Time for remove element from arrayList: " + arrayGetTime);
         return arrayGetTime;
     }
 
     static long timeOfRemoveNumberLinkedList() {
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+        for (int i = 0; i < 100000; i++) {
+            linkedList.add(i);
+        }
         long linkedStartTime = System.nanoTime();
         linkedList.remove(9900);
         long linkedEndTime = System.nanoTime();
@@ -142,7 +157,37 @@ public class TimeOfOperationsWithLists {
         return linkedGetTime;
     }
 
+    static long timeOfRemoveNumberFromTreeSet() {
+        TreeSet<Integer> treeSet = new TreeSet<Integer>();
+        for (int i = 0; i < 100000; i++) {
+            treeSet.add(i);
+        }
+        long treeSetStartTime = System.nanoTime();
+        treeSet.remove(9900);
+        long treeSetEndTime = System.nanoTime();
+        long treeSetExeTime = TimeUnit.MICROSECONDS.convert((treeSetEndTime - treeSetStartTime), TimeUnit.NANOSECONDS);
+        System.out.println("Time for remove element from TreeSet: " + treeSetExeTime);
+        return treeSetExeTime;
+    }
+
+    static long timeOfRemoveNumberFromHashSet() {
+        HashSet<Integer> hashSet = new HashSet<Integer>();
+        for (int i = 0; i < 100000; i++) {
+            hashSet.add(i);
+        }
+        long hashSetStartTime = System.nanoTime();
+        hashSet.remove(9900);
+        long hashSetEndTime = System.nanoTime();
+        long hashSetExeTime = TimeUnit.MICROSECONDS.convert((hashSetEndTime - hashSetStartTime), TimeUnit.NANOSECONDS);
+        System.out.println("Time for remove element from HashSet: " + hashSetExeTime);
+        return hashSetExeTime;
+    }
+
     static long timeOfRemoveNumberFromHashMap() {
+        HashMap<Integer, Integer> hashMap = new HashMap<Integer, Integer>();
+        for (int i = 0; i < 100000; i++) {
+            hashMap.put(i, i);
+        }
         long hashMapStartTime = System.nanoTime();
         hashMap.remove(9900);
         long hashMapEndTime = System.nanoTime();
@@ -152,6 +197,10 @@ public class TimeOfOperationsWithLists {
     }
 
     static long timeOfRemoveNumberFromTreeMap() {
+        TreeMap<Integer, Integer> treeMap = new TreeMap<Integer, Integer>();
+        for (int i = 0; i < 100000; i++) {
+            treeMap.put(i, i);
+        }
         long treeMapStartTime = System.nanoTime();
         treeMap.remove(9900);
         long treeMapEndTime = System.nanoTime();

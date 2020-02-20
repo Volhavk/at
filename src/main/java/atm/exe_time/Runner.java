@@ -18,6 +18,8 @@ public class Runner {
         timeOfGettingNumberFromTreeMap();
         timeOfRemoveNumberFromArray();
         timeOfRemoveNumberLinkedList();
+        timeOfRemoveNumberFromHashSet();
+        timeOfRemoveNumberFromTreeSet();
         timeOfRemoveNumberFromHashMap();
         timeOfRemoveNumberFromTreeMap();
 
